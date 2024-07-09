@@ -1,0 +1,58 @@
+2024/07/09 09:40:51 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "gii". in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-master\testdrive\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-master/testdrive/index.php?r=gii
+---
+2024/07/09 10:29:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`iklinik`.`pendaftaran_pasien`, CONSTRAINT `pendaftaran_pasien_ibfk_1` FOREIGN KEY (`pasien_id`) REFERENCES `pasien` (`id`)). The SQL statement executed was: INSERT INTO `pendaftaran_pasien` (`pasien_id`, `tanggal`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\yii-master\testdrive\protected\controllers\PendaftaranPasienController.php (73)
+in C:\xampp\htdocs\yii-master\testdrive\index.php (13)
+2024/07/09 10:29:05 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`iklinik`.`pendaftaran_pasien`, CONSTRAINT `pendaftaran_pasien_ibfk_1` FOREIGN KEY (`pasien_id`) REFERENCES `pasien` (`id`)). The SQL statement executed was: INSERT INTO `pendaftaran_pasien` (`pasien_id`, `tanggal`) VALUES (:yp0, :yp1) in C:\xampp\htdocs\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1083): CDbCommand->execute()
+#1 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\yii-master\testdrive\protected\controllers\PendaftaranPasienController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): PendaftaranPasienController->actionCreate()
+#4 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('pendaftaranPasi...')
+#14 C:\xampp\htdocs\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\yii-master\testdrive\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii-master/testdrive/index.php?r=pendaftaranPasien/create
+HTTP_REFERER=http://localhost/yii-master/testdrive/index.php?r=pendaftaranPasien/create
+---
+2024/07/09 10:52:36 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`iklinik`.`tindakan_pasien`, CONSTRAINT `tindakan_pasien_ibfk_1` FOREIGN KEY (`pendaftaran_id`) REFERENCES `pendaftaran_pasien` (`id`)). The SQL statement executed was: INSERT INTO `tindakan_pasien` (`pendaftaran_id`, `tindakan_id`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\yii-master\testdrive\protected\controllers\TindakanPasienController.php (73)
+in C:\xampp\htdocs\yii-master\testdrive\index.php (13)
+2024/07/09 10:52:36 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`iklinik`.`tindakan_pasien`, CONSTRAINT `tindakan_pasien_ibfk_1` FOREIGN KEY (`pendaftaran_id`) REFERENCES `pendaftaran_pasien` (`id`)). The SQL statement executed was: INSERT INTO `tindakan_pasien` (`pendaftaran_id`, `tindakan_id`) VALUES (:yp0, :yp1) in C:\xampp\htdocs\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1083): CDbCommand->execute()
+#1 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\yii-master\testdrive\protected\controllers\TindakanPasienController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): TindakanPasienController->actionCreate()
+#4 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('tindakanPasien/...')
+#14 C:\xampp\htdocs\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\yii-master\testdrive\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii-master/testdrive/index.php?r=tindakanPasien/create
+HTTP_REFERER=http://localhost/yii-master/testdrive/index.php?r=tindakanPasien/create
+---
